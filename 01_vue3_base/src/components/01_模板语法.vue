@@ -4,9 +4,9 @@
   <!-- 表达式 -->
   {{ a + 1 }}
   <!-- 三元表达式 -->
-  {{ a >= 1 ? '大于1' : '小于1' }}
+  {{ a >= 1 ? "大于1" : "小于1" }}
   <!-- 操作api -->
-  {{ b[0].split(',').toString() }}
+  {{ b[0].split(",").toString() }}
 
   <!-- v-text -->
   <div v-text="b"></div>
@@ -33,7 +33,9 @@
   <div :id="f">v-bind简写</div>
   <div :style="g">绑定style</div>
   <div :class="c ? 'true' : 'false'">绑定class</div>
-  <div class="f" :class="c ? 'true' : 'false'">支持一个静态class和一个动态class</div>
+  <div class="f" :class="c ? 'true' : 'false'">
+    支持一个静态class和一个动态class
+  </div>
 
   <!-- 双向数据绑定 -->
   <div>
@@ -54,23 +56,23 @@
 
 <script setup lang="ts">
 // 导入响应数据ref
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const a: number = 1;
-const b: string[] = ['hello,world', '<section>hello,world2</section>'];
+const b: string[] = ["hello,world", "<section>hello,world2</section>"];
 const c: boolean = false;
 const d = (event: MouseEvent) => {
-  console.log('d');
+  console.log("d");
   console.log(event);
-}
-const event: string = 'dblclick';
-const f: string = 'name';
-const g = {
-  color: 'red',
-  border: '1px solid red'
 };
-const h = ref('hello');
-const i: string[] = ['a', 'b', 'c'];
+const event: string = "dblclick";
+const f: string = "name";
+const g = {
+  color: "red",
+  border: "1px solid red",
+};
+const h = ref("hello");
+const i: string[] = ["a", "b", "c"];
 </script>
 
 <style>
